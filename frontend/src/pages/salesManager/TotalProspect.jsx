@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../../style/SalesTeamLead/SalesTeamLeadProspect.css";
 import dot from "../../assets/salesTeamLead/dot.svg";
 
-function Prospect() {
+function TotalProspect() {
   const [member, setMember] = useState("");
   const [dateRange, setDateRange] = useState("");
 
@@ -72,7 +72,7 @@ function Prospect() {
   return (
     <>
       <div className="leadprospectContainer">
-        <h1>Prospect</h1>
+        <h1>Total Prospect</h1>
 
         <div className="filter" role="region" aria-label="Search controls">
           <select
@@ -250,4 +250,4 @@ function Prospect() {
   );
 }
 
-export default Prospect;
+export default TotalProspect;

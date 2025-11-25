@@ -48,7 +48,8 @@ body {
 /* === EACH DATA BOX === */
 #data {
   flex: 1 1 230px;
-  max-width: 240px;
+  /* max-width: 240px; */
+  width: 100;
   height: 120px;
   padding: 20px;
   border-radius: 20px;
@@ -202,7 +203,13 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
+#sales-exe-thead th{
+  color: #000000;
+  font-weight: 700;
+}
+
 td {
+  color: #101828;
   font-size: 13px;
 }
 

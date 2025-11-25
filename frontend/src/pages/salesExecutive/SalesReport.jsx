@@ -56,12 +56,12 @@ const SalesReport = () => {
   return (
     <div id="sales-report-container" style={{ backgroundColor: "#fff" }}>
       {/* Heading */}
-      <h3 id="sales-report-heading">Sales Report</h3>
+      <h3 id="sales-report-heading" style={{color:"#5A5C69"}}>Sales Report</h3>
 
       {/* Table container */}
       <div id="sales-report-wrapper">
         <div id="sales-report-table-container">
-          <table id="sales-report-table">
+          <table id="sales-report-table" style={{width:"100%"}}>
             <thead id="sales-report-thead">
               <tr id="sales-report-header-row">
                 <th id="th-company">Company Name</th>
