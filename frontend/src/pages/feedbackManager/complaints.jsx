@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const Popup = ({ show, onClose, title, children, footer, showCloseX = true }) => {
+const Popup = ({
+  show,
+  onClose,
+  title,
+  children,
+  footer,
+  showCloseX = true,
+}) => {
   if (!show) return null;
 
   return (
@@ -25,7 +32,7 @@ const Complaints = () => {
   const [activeTab, setActiveTab] = useState("solved");
   const [showViewPopup, setShowViewPopup] = useState(false);
   const [showUpdatePopup, setShowUpdatePopup] = useState(false);
-  const [__, setSelectedComplaint] = useState(null);
+  const [selectedComplaint, setSelectedComplaint] = useState(null);
 
   const openView = (item) => {
     setSelectedComplaint(item || null);
@@ -38,21 +45,111 @@ const Complaints = () => {
   };
 
   const solvedData = [
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Solved" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Solved" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Solved" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved" },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Solved",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Solved",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Solved",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+    },
   ];
 
   const unsolvedData = [
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved", action: "Follow Up" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved", action: "Send Reminder" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Solved", action: "Send Reminder" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved", action: "Send Reminder" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Unsolved", action: "Send Reminder" },
-    { companyName: "Bold text column", subject: "Bold text column", email_id: "Bold text column", issuedDate: "Bold text column", Discussion: "Bold text column", status: "Solved", action: "Send Reminder" },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+      action: "Follow Up",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+      action: "Send Reminder",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Solved",
+      action: "Send Reminder",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+      action: "Send Reminder",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Unsolved",
+      action: "Send Reminder",
+    },
+    {
+      companyName: "Bold text column",
+      subject: "Bold text column",
+      email_id: "Bold text column",
+      issuedDate: "Bold text column",
+      Discussion: "Bold text column",
+      status: "Solved",
+      action: "Send Reminder",
+    },
   ];
 
   const renderTable = (data, isUnsolved = false) => (
@@ -76,7 +173,9 @@ const Complaints = () => {
             <td>{item.email_id}</td>
             <td>{item.issuedDate}</td>
             <td>
-              <button className="btn btn-view" onClick={() => openView(item)}>View</button>
+              <button className="btn btn-view" onClick={() => openView(item)}>
+                View
+              </button>
             </td>
             <td>
               {item.status === "Solved" ? (
@@ -87,7 +186,10 @@ const Complaints = () => {
             </td>
             {isUnsolved && (
               <td>
-                <button className="btn btn-update" onClick={() => openUpdate(item)}>
+                <button
+                  className="btn btn-update"
+                  onClick={() => openUpdate(item)}
+                >
                   Update
                 </button>
               </td>
@@ -373,13 +475,22 @@ const Complaints = () => {
         }
       `}</style>
 
-      <div style={{backgroundColor:"#ffffff"}} className="complaints-wrapper">
+      <div
+        style={{ backgroundColor: "#ffffff" }}
+        className="complaints-wrapper"
+      >
         {/* Tabs */}
         <div className="tabs-container">
-          <button className={`tab-button ${activeTab === "solved" ? "active" : ""}`} onClick={() => setActiveTab("solved")}>  
+          <button
+            className={`tab-button ${activeTab === "solved" ? "active" : ""}`}
+            onClick={() => setActiveTab("solved")}
+          >
             Solved Complaints
           </button>
-          <button className={`tab-button ${activeTab === "unsolved" ? "active" : ""}`} onClick={() => setActiveTab("unsolved")}>
+          <button
+            className={`tab-button ${activeTab === "unsolved" ? "active" : ""}`}
+            onClick={() => setActiveTab("unsolved")}
+          >
             Unsolved Complaints
           </button>
         </div>
@@ -431,8 +542,20 @@ const Complaints = () => {
             </>
           }
           footer={
-            <div style={{display:'flex',justifyContent:"flex-start",gap:"10px", width:'100%'}}>
-              <button className="btn btn-primary" onClick={() => setShowUpdatePopup(false)}>Submit</button>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                gap: "10px",
+                width: "100%",
+              }}
+            >
+              <button
+                className="btn btn-primary"
+                onClick={() => setShowUpdatePopup(false)}
+              >
+                Submit
+              </button>
             </div>
           }
         >
@@ -452,11 +575,20 @@ const Complaints = () => {
                 <option>High</option>
               </select>
 
-              <textarea className="form-control" rows="6" placeholder="Type Update"></textarea>
+              <textarea
+                className="form-control"
+                rows="6"
+                placeholder="Type Update"
+              ></textarea>
             </div>
             <div className="update-right">
-              <div className="activity-box" style={{ height: '340px' }}>
-                <h6 className="form-label" style={{ textAlign: "center", marginBottom: '10px' }}>Client Activity</h6>
+              <div className="activity-box" style={{ height: "340px" }}>
+                <h6
+                  className="form-label"
+                  style={{ textAlign: "center", marginBottom: "10px" }}
+                >
+                  Client Activity
+                </h6>
               </div>
             </div>
           </div>
