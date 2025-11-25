@@ -62,7 +62,7 @@ import FM_Feedbacks from "../pages/feedbackManager/Feedbacks";
 import FM_Salary from "../pages/feedbackManager/FeedbackSalary";
 import FM_Complaint from "../pages/feedbackManager/Complaints";
 import FM_TeamReport from "../pages/feedbackManager/TeamReport";
-import FM_Salary from "../pages/feedbackManager/FeedbackSalary";
+
 
 // feedbackEmployee
 import FE_Dashboard from "../pages/feedBackEmployee/Dashboard";
